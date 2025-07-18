@@ -1,13 +1,14 @@
 def kangaroo(x1, v1, x2, v2):
-    while True:
-        if x1 == x2:
-            print("YES")
-            break
-        if x1 > x2 or v2 > v1:
-            print("NO")
-            break
-        x1 += v1
-        x2 += v2
+    if x1 > x2 and v1 > v2:
+        return "NO"
+    if x1 < x2 and v1 < v2:
+        return "NO"
+    if v1 == v2:
+        return "NO"
+    if  (x2 - x1) % (v1 - v2) == 0:
+        return "YES"
+    else:
+        return "NO"
 
 if __name__ == '__main__':
     first_multiple_input = input().rstrip().split()
@@ -16,3 +17,4 @@ if __name__ == '__main__':
     x2 = int(first_multiple_input[2])
     v2 = int(first_multiple_input[3])
     result = kangaroo(x1, v1, x2, v2)
+    print(result)
