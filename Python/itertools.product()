@@ -1,6 +1,0 @@
-A = list(map(int, input().split()))
-B = list(map(int, input().split()))
-
-for a in A:
-    for b in B:
-        print(f"({a}, {b})", end=" ")
